@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>衡阳跨境电商产业园 - B2B跨境电商培训课程</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A3D62', // 主色调-深蓝色
+                        secondary: '#C0392B', // 辅助色-红色
+                        accent: '#F39C12', // 强调色-金色
+                        dark: '#1E272E',
+                        light: '#F5F6FA'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(10, 61, 98, 0.15), 0 10px 10px -5px rgba(10, 61, 98, 0.05);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #0A3D62 0%, #3C6382 100%);
+            }
+            .section-divider {
+                position: relative;
+                height: 80px;
+                overflow: hidden;
+            }
+            .section-divider::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z'%3E%3C/path%3E%3C/svg%3E");
+                background-size: cover;
+                background-position: bottom;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-dark">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- 网站Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                        <i class="fa fa-globe text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary">衡阳跨境电商产业园</span>
+                </a>
+                
+                <!-- 导航链接 - 桌面版 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors font-medium">首页</a>
+                    <a href="#courses" class="text-primary font-medium border-b-2 border-primary pb-1">培训课程</a>
+                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors font-medium">课程特色</a>
+                    <a href="#schedule" class="text-gray-700 hover:text-primary transition-colors font-medium">课程安排</a>
+                    <a href="#teachers" class="text-gray-700 hover:text-primary transition-colors font-medium">讲师团队</a>
+                    <a href="#register" class="text-gray-700 hover:text-primary transition-colors font-medium">立即报名</a>
+                </nav>
+                
+                <!-- 咨询按钮 -->
+                <div class="hidden md:block">
+                    <a href="#register" class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full transition-colors">
+                        咨询详情
+                    </a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-primary transition-colors">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-gray-100">首页</a>
+                    <a href="#courses" class="bg-primary/10 text-primary font-medium py-2 px-4 rounded-lg">培训课程</a>
+                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-gray-100">课程特色</a>
+                    <a href="#schedule" class="text-gray-700 hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-gray-100">课程安排</a>
+                    <a href="#teachers" class="text-gray-700 hover:text-primary transition-colors py-2 px-4 rounded-lg hover:bg-gray-100">讲师团队</a>
+                    <a href="#register" class="bg-primary/10 text-primary hover:bg-primary/20 font-medium py-2 px-4 rounded-lg transition-colors">立即报名</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 英雄区域 -->
+        <section class="pt-28 pb-20 gradient-bg text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-6">
+                        B2B跨境电商专项培训
+                    </span>
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-6">
+                        B2B跨境电商实战培训<br>助力企业拓展全球市场
+                    </h1>
+                    <p class="text-xl md:text-2xl opacity-90 mb-10 max-w-3xl mx-auto">
+                        从客户开发到供应链展示，全方位提升B2B跨境电商运营能力，依托衡阳产业优势，打造国际竞争力
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#courses" class="bg-white text-primary hover:bg-gray-100 font-medium py-3 px-8 rounded-full transition-all text-center shadow-lg">
+                            查看课程内容
+                        </a>
+                        <a href="#register" class="bg-transparent border-2 border-white hover:bg-white/10 font-medium py-3 px-8 rounded-full transition-all text-center">
+                            立即报名
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider"></div>
+        </section>
+
+        <!-- 培训数据 -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-primary mb-2">500+</div>
+                        <p class="text-gray-600">企业学员</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                        <p class="text-gray-600">满意度</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-primary mb-2">30+</div>
+                        <p class="text-gray-600">实战课程</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                        <p class="text-gray-600">资深讲师</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心课程内容 -->
+        <section id="courses" class="py-16 bg-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">B2B跨境电商核心培训内容</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">系统化学习B2B跨境电商运营全流程，从客户开发到供应链展示，全方位提升实战能力</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 课程模块1：客户开发 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <div class="h-48 bg-primary/5 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa fa-users text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">客户开发策略</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>海关数据深度挖掘与精准客户定位</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>LinkedIn高效获客技巧与客户关系维护</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>国际展会客户开发与跟进策略</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>邮件营销自动化与转化率提升</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>询盘转化与订单谈判技巧</span>
+                                </li>
+                            </ul>
+                            <div class="mt-6 pt-4 border-t border-gray-100">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">课程时长：12小时</span>
+                                    <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">实战演练</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程模块2：独立站运营 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <div class="h-48 bg-primary/5 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa fa-globe text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">B2B独立站实战</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>独立站搭建：Shopify/BigCommerce实操</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>B2B网站SEO优化与关键词策略</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>Google Ads B2B营销与ROI优化</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>产品页面转化率提升技巧</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>独立站数据分析与运营优化</span>
+                                </li>
+                            </ul>
+                            <div class="mt-6 pt-4 border-t border-gray-100">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">课程时长：16小时</span>
+                                    <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">实操教学</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程模块3：供应链展示 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <div class="h-48 bg-primary/5 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fa fa-cubes text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">供应链展示技巧</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>VR工厂云参观系统搭建与应用</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>产品生产流程可视化展示设计</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>企业资质与生产能力有效呈现</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>OEM/ODM定制能力展示策略</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>供应链响应速度与灵活性展示</span>
+                                </li>
+                            </ul>
+                            <div class="mt-6 pt-4 border-t border-gray-100">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">课程时长：10小时</span>
+                                    <span class="bg-primary/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">案例分析</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 课程特色 -->
+        <section id="features" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">B2B培训课程特色</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">理论结合实践，打造实用性强、效果显著的B2B跨境电商培训体系</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                            <i class="fa fa-briefcase text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">实战导向</h3>
+                            <p class="text-gray-600">基于真实B2B跨境电商业务场景设计课程内容，每个模块包含案例分析、实操演练和解决方案讨论，确保所学即所用。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                            <i class="fa fa-industry text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">产业结合</h3>
+                            <p class="text-gray-600">结合衡阳本地产业特色，针对机械制造、轻工产品、电子电器等优势行业，提供定制化B2B出海解决方案和案例分析。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                            <i class="fa fa-comments text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">导师辅导</h3>
+                            <p class="text-gray-600">课程结束后提供1对1企业问诊服务，针对企业实际问题提供个性化解决方案，帮助企业将所学知识转化为实际业务增长。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-6">
+                            <i class="fa fa-handshake-o text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">资源对接</h3>
+                            <p class="text-gray-600">为学员企业对接海外采购商资源、跨境电商服务资源和供应链资源，依托衡阳跨境电商产业园平台，实现资源高效整合。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 课程安排 -->
+        <section id="schedule" class="py-16 bg-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">课程安排</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">系统化的课程设置，循序渐进掌握B2B跨境电商核心技能</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- 日程时间线 -->
+                    <div class="relative">
+                        <!-- 时间线中轴线 -->
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20"></div>
+                        
+                        <!-- 第一天 -->
+                        <div class="relative mb-12">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第一天上午</span>
+                                    <h3 class="text-xl font-bold mb-2">B2B跨境电商市场分析与策略规划</h3>
+                                    <p class="text-gray-600">全球B2B电商市场趋势分析、目标市场选择策略、企业B2B出海战略规划、成功案例解析</p>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第一天下午 -->
+                        <div class="relative mb-12">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12"></div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第一天下午</span>
+                                    <h3 class="text-xl font-bold mb-2">海关数据挖掘与精准客户定位</h3>
+                                    <p class="text-gray-600">海关数据获取渠道、目标客户筛选方法、采购需求分析、潜在客户评估体系建立</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二天上午 -->
+                        <div class="relative mb-12">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第二天上午</span>
+                                    <h3 class="text-xl font-bold mb-2">LinkedIn获客与客户关系管理</h3>
+                                    <p class="text-gray-600">专业档案优化、精准客户搜索、高效沟通技巧、客户关系维护策略、社群运营方法</p>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二天下午 -->
+                        <div class="relative mb-12">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12"></div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第二天下午</span>
+                                    <h3 class="text-xl font-bold mb-2">B2B独立站搭建与优化</h3>
+                                    <p class="text-gray-600">独立站平台选择、页面结构设计、产品展示技巧、询盘转化路径优化、移动端适配</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第三天上午 -->
+                        <div class="relative mb-12">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第三天上午</span>
+                                    <h3 class="text-xl font-bold mb-2">B2B数字营销与流量获取</h3>
+                                    <p class="text-gray-600">SEO优化策略、Google Ads投放技巧、内容营销方法、行业平台推广、营销效果分析</p>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第三天下午 -->
+                        <div class="relative">
+                            <div class="flex flex-col md:flex-row items-start">
+                                <div class="md:w-1/2 md:pr-12"></div>
+                                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary z-10"></div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-2">第三天下午</span>
+                                    <h3 class="text-xl font-bold mb-2">供应链展示与VR工厂应用</h3>
+                                    <p class="text-gray-600">企业实力展示策略、生产流程可视化、VR工厂搭建方法、在线样品展示技巧、OEM能力呈现</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 讲师团队 -->
+        <section id="teachers" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">资深讲师团队</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">拥有丰富实战经验的B2B跨境电商专家，提供专业指导</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 讲师1 -->
+                    <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/teacher1/400/600" alt="张明 - B2B跨境电商专家" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-1">张明</h3>
+                            <p class="text-primary mb-3">B2B跨境电商专家</p>
+                            <p class="text-gray-600 text-sm mb-4">10年+外贸B2B经验，曾帮助300+企业搭建跨境B2B平台，年销售额超千万美元</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 讲师2 -->
+                    <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/teacher2/400/600" alt="李娜 - 数字营销专家" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-1">李娜</h3>
+                            <p class="text-primary mb-3">数字营销专家</p>
+                            <p class="text-gray-600 text-sm mb-4">Google认证讲师，擅长B2B企业SEO和SEM策略，帮助企业提升流量转化率30%+</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 讲师3 -->
+                    <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/teacher3/400/600" alt="王强 - 客户开发专家" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-1">王强</h3>
+                            <p class="text-primary mb-3">客户开发专家</p>
+                            <p class="text-gray-600 text-sm mb-4">8年外贸客户开发经验，擅长通过海关数据和社交平台获取精准客户，成交率高达40%</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 讲师4 -->
+                    <div class="bg-light rounded-2xl overflow-hidden card-hover">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/teacher4/400/600" alt="陈静 - 供应链管理专家" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-1">陈静</h3>
+                            <p class="text-primary mb-3">供应链管理专家</p>
+                            <p class="text-gray-600 text-sm mb-4">12年制造业供应链经验，精通跨境B2B供应链展示和管理，帮助多家企业提升订单量</p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学员反馈 -->
+        <section class="py-16 bg-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">学员反馈</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">来自衡阳本地企业学员的真实评价</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 反馈1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm card-hover">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/student1/100/100" alt="学员头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">刘总 - 衡阳某机械制造公司</h4>
+                                <div class="flex text-accent text-sm">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"参加了B2B培训后，我们公司通过LinkedIn成功开发了3个欧洲大客户，课程内容非常实用，特别是海关数据挖掘部分，让我们找到了很多精准客户。"</p>
+                    </div>
+                    
+                    <!-- 反馈2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm card-hover">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/student2/100/100" alt="学员头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">张经理 - 衡阳某电子企业</h4>
+                                <div class="flex text-accent text-sm">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"独立站运营课程让我们受益匪浅，按照老师教的方法优化网站后，询盘量增加了50%，而且质量很高。导师的一对一辅导也解决了我们很多实际问题。"</p>
+                    </div>
+                    
+                    <!-- 反馈3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm card-hover">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/student3/100/100" alt="学员头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold">王总 - 衡阳某轻工企业</h4>
+                                <div class="flex text-accent text-sm">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"VR工厂展示系统太实用了，很多国外客户通过我们的在线工厂参观就直接下单了，省去了很多沟通成本。课程不仅教知识，还帮助我们对接了很多资源。"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 报名表单 -->
+        <section id="register" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                        <div class="flex flex-col lg:flex-row">
+                            <div class="lg:w-1/2 p-8 md:p-12 bg-primary text-white">
+                                <h2 class="text-3xl font-bold mb-6">立即报名参加培训</h2>
+                                <p class="mb-8 opacity-90">填写下方表单，预约B2B跨境电商培训课程，抢占全球市场先机。前20名报名企业可享受8折优惠，并获赠价值2000元的企业诊断服务。</p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-1">培训时间</h3>
+                                            <p class="opacity-90">每月1-3日，3天集中培训（可申请企业内训）</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-1">培训地点</h3>
+                                            <p class="opacity-90">衡阳跨境电商产业园培训中心（珠晖区东阳渡街道）</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                            <i class="fa fa-credit-card"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-1">培训费用</h3>
+                                            <p class="opacity-90">原价：3980元/人，园区企业优惠价：2980元/人</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="lg:w-1/2 p-8 md:p-12">
+                                <h3 class="text-2xl font-bold mb-6">预约报名</h3>
+                                <form>
+                                    <div class="mb-4">
+                                        <label for="company" class="block text-gray-700 font-medium mb-2">企业名称</label>
+                                        <input type="text" id="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入企业名称">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="contact-person" class="block text-gray-700 font-medium mb-2">联系人</label>
+                                        <input type="text" id="contact-person" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入联系人姓名">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="contact-phone" class="block text-gray-700 font-medium mb-2">联系电话</label>
+                                        <input type="tel" id="contact-phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入联系电话">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="industry" class="block text-gray-700 font-medium mb-2">所属行业</label>
+                                        <select id="industry" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                            <option value="">请选择行业</option>
+                                            <option value="machinery">机械制造</option>
+                                            <option value="electronics">电子电器</option>
+                                            <option value="light-industry">轻工产品</option>
+                                            <option value="chemical">化工建材</option>
+                                            <option value="other">其他行业</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label for="participants" class="block text-gray-700 font-medium mb-2">参与人数</label>
+                                        <select id="participants" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                            <option value="1">1人</option>
+                                            <option value="2">2人</option>
+                                            <option value="3">3人</option>
+                                            <option value="4">4人</option>
+                                            <option value="5+">5人及以上</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-6">
+                                        <label for="message" class="block text-gray-700 font-medium mb-2">备注信息</label>
+                                        <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="请输入您的需求或疑问"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                                        提交报名
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                            <i class="fa fa-globe text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">衡阳跨境电商产业园</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">跨境电商全链路服务提供商，致力于为衡阳及中部地区企业出海提供全方位支持，助力品牌全球化布局。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">培训课程</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">B2B客户开发</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">独立站运营</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">供应链展示</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">数字营销</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">企业内训服务</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">关于园区</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">园区简介</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">服务项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">政策支持</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">入驻流程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">新闻动态</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系方式</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">湖南省衡阳市珠晖区东阳渡街道湖南华南制造集团股份公司内</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">0734-8338888</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">training@hnscmg.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">周一至周五 9:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 衡阳跨境电商产业园. 保留所有权利.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">服务条款</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">法律声明</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+            
+            // 显示/隐藏返回顶部按钮
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // 返回顶部功能
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动菜单（如果打开）
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    
+                    // 计算目标位置（考虑导航栏高度）
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
