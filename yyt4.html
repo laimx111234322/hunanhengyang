@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通亚马逊培训体系</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066b2', // 怡亚通主蓝色
+                        secondary: '#0099da', // 怡亚通次蓝色
+                        accent: '#ff6600', // 怡亚通橙色强调
+                        dark: '#333333',
+                        light: '#f5f7fa',
+                        amazon: '#FF9900', // 亚马逊特色橙色
+                    },
+                    fontFamily: {
+                        sans: ['Microsoft YaHei', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease-in-out;
+            }
+            .bg-gradient-amazon {
+                background: linear-gradient(135deg, #0066b2 0%, #0099da 50%, #FF9900 100%);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://picsum.photos/id/20/80/40" alt="怡亚通logo" class="h-10">
+                <nav class="ml-10 hidden md:flex space-x-8">
+                    <a href="#" class="text-primary font-medium hover:text-accent transition-custom">首页</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">关于我们</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">服务介绍</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">亚马逊培训</a>
+                    <a href="#" class="text-dark font-medium hover:text-accent transition-custom">联系我们</a>
+                </nav>
+            </div>
+            <div class="flex items-center">
+                <a href="tel:4008888888" class="hidden md:flex items-center text-primary mr-6">
+                    <i class="fa fa-phone mr-2"></i>
+                    <span>400-888-8888</span>
+                </a>
+                <button class="md:hidden text-dark text-xl" id="menuToggle">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white absolute w-full border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium py-2 hover:text-accent transition-custom">首页</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">关于我们</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">服务介绍</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">亚马逊培训</a>
+                <a href="#" class="text-dark font-medium py-2 hover:text-accent transition-custom">联系我们</a>
+                <a href="tel:4008888888" class="text-primary py-2">
+                    <i class="fa fa-phone mr-2"></i>
+                    <span>400-888-8888</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-amazon text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 text-shadow leading-tight">
+                    怡亚通亚马逊全球开店培训体系
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 opacity-90">
+                    从账号注册到爆款打造，全方位亚马逊运营实战培训，助您快速占领全球市场
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#training-content" class="bg-white text-primary font-medium px-8 py-3 rounded-md hover:bg-gray-100 transition-custom">
+                        了解培训内容
+                    </a>
+                    <a href="#contact-us" class="bg-amazon text-white font-medium px-8 py-3 rounded-md hover:bg-amazon/90 transition-custom">
+                        咨询培训详情
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 亚马逊市场概览 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">亚马逊全球市场机遇</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-6">
+                        亚马逊作为全球最大的电商平台，覆盖18个站点，拥有超过3亿活跃用户，
+                        为中国卖家提供了巨大的全球市场机遇。然而，亚马逊平台规则复杂，
+                        竞争激烈，需要专业的运营知识和技巧才能取得成功。
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        怡亚通亚马逊培训体系结合10年+跨境电商实战经验，帮助卖家快速掌握
+                        亚马逊运营核心技能，规避风险，提升销量，实现可持续发展。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                            <i class="fa fa-globe text-amazon mr-2"></i>
+                            <span>18个全球站点</span>
+                        </div>
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                            <i class="fa fa-users text-amazon mr-2"></i>
+                            <span>3亿+活跃用户</span>
+                        </div>
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                            <i class="fa fa-shopping-cart text-amazon mr-2"></i>
+                            <span>年销售超5000亿美元</span>
+                        </div>
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                            <i class="fa fa-line-chart text-amazon mr-2"></i>
+                            <span>年增长率20%+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://picsum.photos/id/26/800/600" alt="亚马逊全球市场" class="rounded-lg shadow-xl w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
+                        <div class="flex items-center mb-2">
+                            <i class="fa fa-lightbulb-o text-amazon text-xl mr-2"></i>
+                            <h4 class="font-semibold">专家提示</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            2023年亚马逊全球第三方卖家销售额占比已达59%，中国卖家平均年增长率超过35%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训目标 -->
+    <section id="training-goals" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">培训目标</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+                    <p class="text-lg leading-relaxed">
+                        帮助企业和个人快速掌握亚马逊平台运营技巧，从账号注册到产品上架，
+                        从Listing优化到流量获取，从订单处理到客户服务，全方位提升亚马逊运营能力，
+                        实现店铺销售目标，打造可持续盈利的亚马逊业务。
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover border-t-4 border-amazon">
+                        <div class="text-amazon text-3xl mb-4">
+                            <i class="fa fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">快速入门</h3>
+                        <p>30天内完成账号注册与店铺基础搭建，实现产品成功上架</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover border-t-4 border-amazon">
+                        <div class="text-amazon text-3xl mb-4">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">提升销量</h3>
+                        <p>掌握流量获取与转化技巧，实现3个月内销售额稳步增长</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover border-t-4 border-amazon">
+                        <div class="text-amazon text-3xl mb-4">
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">打造爆款</h3>
+                        <p>学习产品选择与打造方法，培养1-3款潜力爆款产品</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover border-t-4 border-amazon">
+                        <div class="text-amazon text-3xl mb-4">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">合规运营</h3>
+                        <p>熟悉平台规则，有效规避风险，确保账号安全稳定运营</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训对象 -->
+    <section id="training-audience" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">培训对象</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    无论您是亚马逊新手还是有一定经验的卖家，我们都能提供针对性的培训方案
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-light rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/180/600/400" alt="亚马逊新手卖家" class="w-full h-full object-cover transition-custom duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">亚马逊新手卖家</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>从未接触过亚马逊平台的企业/个人</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>想通过亚马逊拓展外贸渠道的工厂</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>计划开展跨境电商业务的团队</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-light rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/201/600/400" alt="亚马逊初级卖家" class="w-full h-full object-cover transition-custom duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">亚马逊初级卖家</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>已开店但销量不理想的卖家</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>缺乏系统运营方法的新手卖家</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>希望提升基础运营能力的团队</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-light rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/160/600/400" alt="亚马逊进阶卖家" class="w-full h-full object-cover transition-custom duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">亚马逊进阶卖家</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>有一定销量想突破瓶颈的卖家</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>计划打造爆款和品牌的企业</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-amazon mt-1 mr-2"></i>
+                                <span>希望拓展多站点运营的团队</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训内容 -->
+    <section id="training-content" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">培训内容体系</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    从入门到精通，覆盖亚马逊运营全流程，实战案例教学，快速提升运营能力
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- 培训阶段导航 -->
+                <div class="flex flex-wrap justify-center mb-10 gap-2">
+                    <button class="training-tab active px-6 py-2 rounded-full bg-primary text-white font-medium" data-tab="beginner">
+                        入门阶段
+                    </button>
+                    <button class="training-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom" data-tab="intermediate">
+                        进阶阶段
+                    </button>
+                    <button class="training-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom" data-tab="advanced">
+                        精英阶段
+                    </button>
+                </div>
+                
+                <!-- 入门阶段内容 -->
+                <div class="training-content active" id="beginner-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-user-plus"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">账号注册与 setup</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>个人/企业账号注册流程与区别</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>注册材料准备与审核要点</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>店铺基本设置与优化</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>账号安全与风险防范</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-cubes"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">产品上架与管理</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>产品分类选择与审核</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>Listing创建全要素详解</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>产品图片拍摄与优化规范</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>库存管理与FBA基础</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">订单处理与客户服务</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>订单查看与处理流程</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>发货操作与物流选择</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>客户邮件回复技巧与模板</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>差评处理与纠纷解决</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-book"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">平台规则与政策</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>亚马逊平台核心规则解读</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>禁售商品与限制政策</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>知识产权保护与侵权防范</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>账号绩效指标与提升方法</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 进阶阶段内容 -->
+                <div class="training-content hidden" id="intermediate-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Listing优化与SEO</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>关键词研究与应用技巧</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>标题、五点描述优化公式</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>A+页面设计与品牌故事</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>Listing转化率提升策略</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-line-chart"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">亚马逊广告运营</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>SP广告创建与优化技巧</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>SB/SBV广告投放策略</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>广告数据分析与优化</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>ACoS控制与广告ROI提升</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-truck"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">FBA深度运营</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>FBA发货计划与标签规范</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>库存健康度管理与优化</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>FBA费用结构与成本控制</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>多渠道配送与海外仓结合</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">评论与站外引流</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>亚马逊评论政策解读</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>合规获取评论的有效方法</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>站外引流渠道选择与操作</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>社交媒体营销与红人合作</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 精英阶段内容 -->
+                <div class="training-content hidden" id="advanced-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-bullseye"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">爆款打造策略</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>潜力爆款产品选择方法</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>产品差异化与竞争分析</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>爆款推广全阶段运营策略</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>爆款生命周期管理与维护</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-globe"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">多站点运营与扩张</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>全球站点选择与市场分析</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>多站点账号管理与关联防范</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>国际物流与库存分配策略</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>多语言Listing优化与本地化</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-shield"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">账号风险与申诉</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>账号健康监控与风险预警</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>常见违规类型与规避方法</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>账号申诉信撰写技巧</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>账号冻结后的应对策略</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-amazon flex items-center justify-center text-white mr-4">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">品牌备案与运营</h3>
+                            </div>
+                            <ul class="space-y-3 pl-14">
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>亚马逊品牌备案全流程</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>品牌旗舰店设计与运营</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>品牌分析工具应用与优化</span>
+                                </li>
+                                <li class="relative">
+                                    <i class="fa fa-angle-right text-amazon absolute left-[-20px] top-[5px]"></i>
+                                    <span>品牌侵权监控与维权策略</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 培训方式与服务 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">培训方式与增值服务</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    灵活多样的培训形式，配合专业增值服务，全方位支持您的亚马逊业务
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fa fa-graduation-cap text-amazon mr-3"></i>
+                        多元化培训方式
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">实战面授课程</h4>
+                                <p class="text-gray-600">
+                                    小班制教学，专家面对面指导，案例分析+实操演练，
+                                    现场解决实际问题，快速掌握核心技能。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">在线视频课程</h4>
+                                <p class="text-gray-600">
+                                    随时随地学习，高清视频+实操演示，可反复观看，
+                                    配套学习资料与在线答疑，灵活安排学习进度。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-handshake-o"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">一对一辅导</h4>
+                                <p class="text-gray-600">
+                                    专属亚马逊运营专家，根据店铺实际情况定制辅导方案，
+                                    针对性解决个性化问题，快速提升店铺业绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fa fa-thumbs-up text-amazon mr-3"></i>
+                        专业增值服务
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-file-text"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">账号注册服务</h4>
+                                <p class="text-gray-600">
+                                    提供亚马逊全球站点注册指导，资料准备审核，
+                                    确保账号顺利下店，降低注册风险。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-bar-chart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">店铺诊断优化</h4>
+                                <p class="text-gray-600">
+                                    专业团队对店铺进行全面诊断，找出运营问题，
+                                    提供针对性优化方案，提升店铺整体表现。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg shadow-md flex">
+                            <div class="w-12 h-12 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 flex-shrink-0">
+                                <i class="fa fa-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">账号申诉服务</h4>
+                                <p class="text-gray-600">
+                                    针对账号警告、限制、冻结等问题，提供专业申诉服务，
+                                    最大化提高申诉成功率，帮助账号恢复正常。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">亚马逊培训成功案例</h2>
+                <div class="w-20 h-1 bg-amazon mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    众多企业通过我们的培训实现了亚马逊业务的突破与增长
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://picsum.photos/id/96/60/60" alt="案例企业logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-semibold">某家居用品品牌</h3>
+                                    <p class="text-gray-500 text-sm">6个月从0到月销10万美元</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                该企业是传统外贸企业，通过参加我们的亚马逊精英培训，
+                                3个月内完成账号注册与产品上架，6个月实现月销10万美元，
+                                成功打造2款亚马逊Best Seller产品，目前已拓展至3个海外站点。
+                            </p>
+                            <div class="flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://picsum.photos/id/91/60/60" alt="案例企业logo" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h3 class="text-xl font-semibold">某3C配件厂商</h3>
+                                    <p class="text-gray-500 text-sm">广告ACoS从45%降至18%</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                该企业亚马逊店铺运营1年，广告成本居高不下。通过参加我们的
+                                亚马逊广告专项培训，优化广告策略与Listing，3个月内广告ACoS
+                                从45%降至18%，自然流量提升60%，整体利润率提升22%。
+                            </p>
+                            <div class="flex items-center text-primary">
+                                <span>查看详情</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="inline-flex items-center bg-primary text-white font-medium px-6 py-3 rounded-md hover:bg-primary/90 transition-custom">
+                        查看更多成功案例
+                        <i class="fa fa-long-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 咨询表单 -->
+    <section id="contact-us" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary mb-4">咨询亚马逊培训详情</h2>
+                        <div class="w-20 h-1 bg-amazon mb-6"></div>
+                        <p class="text-gray-600 mb-8">
+                            填写下方表单，我们的亚马逊培训顾问将在24小时内与您联系，
+                            为您提供详细的培训方案与报价。
+                        </p>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 mt-1">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">总部地址</h3>
+                                    <p class="text-gray-600">深圳市南山区科技园科苑南路3099号</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 mt-1">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">联系电话</h3>
+                                    <p class="text-gray-600">400-888-8888</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-amazon/10 flex items-center justify-center text-amazon mr-4 mt-1">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">电子邮箱</h3>
+                                    <p class="text-gray-600">amazon@easye.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-custom">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="bg-light p-8 rounded-lg shadow-md">
+                            <div class="mb-6">
+                                <label for="company" class="block text-gray-700 font-medium mb-2">企业名称 *</label>
+                                <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom" placeholder="请输入企业名称">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">联系人 *</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom" placeholder="请输入联系人姓名">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">联系电话 *</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom" placeholder="请输入联系电话">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">电子邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom" placeholder="请输入电子邮箱">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="amazon-experience" class="block text-gray-700 font-medium mb-2">亚马逊运营经验</label>
+                                <select id="amazon-experience" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom">
+                                    <option value="">请选择经验程度</option>
+                                    <option value="none">无经验，尚未开店</option>
+                                    <option value="beginner">新手，开店未满6个月</option>
+                                    <option value="intermediate">有经验，开店6个月以上</option>
+                                    <option value="advanced">资深，多站点运营</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">培训需求</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amazon focus:border-transparent transition-custom" placeholder="请输入您的培训需求或疑问"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-amazon text-white font-medium px-6 py-3 rounded-md hover:bg-amazon/90 transition-custom">
+                                提交咨询
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="https://picsum.photos/id/30/120/60" alt="怡亚通logo" class="h-12 mb-6">
+                    <p class="text-gray-400 mb-6">
+                        怡亚通作为中国领先的供应链服务商，
+                        致力于为企业提供专业的亚马逊培训与跨境电商解决方案，
+                        助力中国品牌走向全球市场。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">关于怡亚通</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">亚马逊培训</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">跨境电商服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">成功案例</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">行业资讯</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">亚马逊服务</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">亚马逊培训课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">账号注册服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">店铺代运营</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">品牌备案服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">账号申诉服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">全球物流解决方案</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">联系方式</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-amazon mt-1 mr-3"></i>
+                            <span class="text-gray-400">深圳市南山区科技园科苑南路3099号</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-amazon mt-1 mr-3"></i>
+                            <span class="text-gray-400">400-888-8888</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-amazon mt-1 mr-3"></i>
+                            <span class="text-gray-400">amazon@easye.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o text-amazon mt-1 mr-3"></i>
+                            <span class="text-gray-400">周一至周五 9:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 深圳市怡亚通供应链股份有限公司 版权所有</p>
+                <p class="mt-2">粤ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 培训内容标签切换
+        const trainingTabs = document.querySelectorAll('.training-tab');
+        const trainingContents = document.querySelectorAll('.training-content');
+        
+        trainingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有标签的活动状态
+                trainingTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                
+                // 添加当前标签的活动状态
+                tab.classList.add('active', 'bg-primary', 'text-white');
+                tab.classList.remove('bg-gray-200', 'text-gray-700');
+                
+                // 隐藏所有内容
+                trainingContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('active');
+                });
+                
+                // 显示对应内容
+                const tabId = tab.getAttribute('data-tab');
+                const activeContent = document.getElementById(`${tabId}-content`);
+                activeContent.classList.remove('hidden');
+                activeContent.classList.add('active');
+            });
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-lg');
+                navbar.classList.remove('py-3', 'shadow-md');
+            } else {
+                navbar.classList.add('py-3', 'shadow-md');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
