@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怡亚通业务增长漏斗 | 财务预测方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0052CC', // 怡亚通深蓝主色
+                        secondary: '#2383E2', // 亮蓝色
+                        accent: '#FF5630', // 强调红橙色
+                        dark: '#172B4D',
+                        light: '#F4F5F7',
+                        success: '#00B8D9',
+                        profit: '#00B578'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .funnel-hover {
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            .funnel-hover:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 12px 20px rgba(0, 82, 204, 0.15);
+            }
+            .connector {
+                height: 24px;
+                width: 6px;
+                margin: 0 auto;
+                background: linear-gradient(to bottom, #2383E2, #0052CC);
+                transform-origin: top center;
+                opacity: 0;
+                transform: scaleY(0);
+                transition: all 0.6s ease 0.3s;
+            }
+            .connector.visible {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-dark overflow-x-hidden">
+    <!-- 顶部导航 -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://picsum.photos/id/20/80/40" alt="怡亚通集团" class="h-10">
+                <h1 class="ml-4 text-xl font-bold text-primary hidden md:block">业务增长漏斗 | 财务预测</h1>
+                <span class="ml-4 text-sm bg-accent/10 text-accent px-3 py-1 rounded-full hidden md:inline-block">
+                    未来2年总收益：1.8亿元
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
+                    <i class="fa fa-download mr-1"></i> 下载完整报告
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心数据概览 -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold mb-6">
+                    未来2年总收益目标：1.8亿元
+                </h1>
+                <p class="text-lg mb-10 opacity-90">
+                    四级业务漏斗层层递进，流量转化驱动利润增长，清晰的收益结构与明确的增长路径
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl font-bold mb-1 counter" data-target="4">0</div>
+                        <div class="text-sm opacity-80">业务层级</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl font-bold mb-1 counter" data-target="18000">0</div>
+                        <div class="text-sm opacity-80">总收益(万元)</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl font-bold mb-1 counter" data-target="50">0</div>
+                        <div class="text-sm opacity-80">年复合增长(%)</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div class="text-3xl font-bold mb-1 counter" data-target="65">0</div>
+                        <div class="text-sm opacity-80">综合利润率(%)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心漏斗与收益分布 -->
+    <section class="py-16 md:py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-dark mb-4">四级业务漏斗与收益分解</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    每一层级贡献明确收益，形成持续增长的盈利生态
+                </p>
+            </div>
+            
+            <!-- 漏斗图形 -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <!-- 第一层：培训 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-primary to-secondary text-white p-6 md:p-8 rounded-t-3xl mb-0" style="width: 100%; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.1s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">流量入口</span>
+                            <h3 class="text-2xl font-bold mb-2">第一层：培训赋能</h3>
+                            <p class="text-white/90">大学生 · 工厂转型 · 跨境电商创业者</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-primary font-bold px-4 py-2 rounded-lg">
+                            总收益占比 <span class="text-accent">30%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">培训周期</div>
+                            <div class="font-medium">7天 - 1个月</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">收费标准</div>
+                            <div class="font-medium">个人5,000元 | 企业60,000元</div>
+                            <div class="text-xs text-white/80">先学习后付费</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">2年收益</div>
+                            <div class="font-medium text-xl">5,400万元</div>
+                            <div class="text-xs text-white/80">年复合增长50%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第二层：代运营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-secondary to-success text-white p-6 md:p-8 mb-0" style="width: 80%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.3s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">服务深化</span>
+                            <h3 class="text-2xl font-bold mb-2">第二层：代运营服务</h3>
+                            <p class="text-white/90">优质工厂 · 潜力产品 · 运营赋能</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-secondary font-bold px-4 py-2 rounded-lg">
+                            总收益占比 <span class="text-accent">39%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">收费模式</div>
+                            <div class="font-medium">基础服务费+利润分成</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">收费标准</div>
+                            <div class="font-medium">30,000元/月 + 20%分成</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">2年收益</div>
+                            <div class="font-medium text-xl">7,020万元</div>
+                            <div class="text-xs text-white/80">年复合增长40%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第三层：联合运营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-success to-accent text-white p-6 md:p-8 mb-0" style="width: 60%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.5s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">深度绑定</span>
+                            <h3 class="text-2xl font-bold mb-2">第三层：联合运营</h3>
+                            <p class="text-white/90">合资公司 · 风险共担 · 利润共享</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-success font-bold px-4 py-2 rounded-lg">
+                            总收益占比 <span class="text-accent">26%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">合作模式</div>
+                            <div class="font-medium">合资公司 · 持股30-40%</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">收益来源</div>
+                            <div class="font-medium">股权分红+服务费+金融收益</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">2年收益</div>
+                            <div class="font-medium text-xl">4,680万元</div>
+                            <div class="text-xs text-white/80">年复合增长60%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector"></div>
+                
+                <!-- 第四层：品牌自营 -->
+                <div class="funnel-layer relative funnel-hover bg-gradient-to-r from-accent to-dark text-white p-6 md:p-8 rounded-b-3xl" style="width: 40%; margin: 0 auto; transform: translateY(20px); opacity: 0; transition: all 0.8s ease 0.7s;">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div>
+                            <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-3">价值最大化</span>
+                            <h3 class="text-2xl font-bold mb-2">第四层：品牌自营</h3>
+                            <p class="text-white/90">顶级产品 · 全链掌控 · 品牌增值</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 bg-white text-accent font-bold px-4 py-2 rounded-lg">
+                            总收益占比 <span class="text-primary">5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">业务模式</div>
+                            <div class="font-medium">100%自营 · 全渠道运营</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">利润空间</div>
+                            <div class="font-medium">50-70% · 品牌溢价</div>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-3">
+                            <div class="text-xs text-white/80 mb-1">2年收益</div>
+                            <div class="font-medium text-xl">900万元</div>
+                            <div class="text-xs text-white/80">年复合增长60%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 收益分解图表 -->
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-8">
+                <h3 class="text-xl font-bold text-dark mb-6 text-center">未来2年收益分解（万元）</h3>
+                <div class="h-80">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 年度财务预测详情 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark mb-10 text-center">年度财务预测明细</h2>
+                
+                <div class="overflow-x-auto shadow-lg rounded-xl mb-12">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-gray-50 border-b-2 border-gray-200">
+                                <th class="py-4 px-6 font-bold text-gray-600">业务层级</th>
+                                <th class="py-4 px-6 font-bold text-gray-600">第一年收益（万元）</th>
+                                <th class="py-4 px-6 font-bold text-gray-600">第二年收益（万元）</th>
+                                <th class="py-4 px-6 font-bold text-gray-600">两年合计（万元）</th>
+                                <th class="py-4 px-6 font-bold text-gray-600">年复合增长率</th>
+                                <th class="py-4 px-6 font-bold text-gray-600">占总收益比例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-6 font-medium">培训赋能</td>
+                                <td class="py-4 px-6">2,160</td>
+                                <td class="py-4 px-6">3,240</td>
+                                <td class="py-4 px-6 font-bold">5,400</td>
+                                <td class="py-4 px-6 text-primary font-bold">50%</td>
+                                <td class="py-4 px-6 text-primary font-bold">30%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-6 font-medium">代运营服务</td>
+                                <td class="py-4 px-6">2,520</td>
+                                <td class="py-4 px-6">4,500</td>
+                                <td class="py-4 px-6 font-bold">7,020</td>
+                                <td class="py-4 px-6 text-secondary font-bold">40%</td>
+                                <td class="py-4 px-6 text-secondary font-bold">39%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-6 font-medium">联合运营</td>
+                                <td class="py-4 px-6">1,800</td>
+                                <td class="py-4 px-6">2,880</td>
+                                <td class="py-4 px-6 font-bold">4,680</td>
+                                <td class="py-4 px-6 text-success font-bold">60%</td>
+                                <td class="py-4 px-6 text-success font-bold">26%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                <td class="py-4 px-6 font-medium">品牌自营</td>
+                                <td class="py-4 px-6">360</td>
+                                <td class="py-4 px-6">540</td>
+                                <td class="py-4 px-6 font-bold">900</td>
+                                <td class="py-4 px-6 text-accent font-bold">60%</td>
+                                <td class="py-4 px-6 text-accent font-bold">5%</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-4 px-6 font-bold">合计</td>
+                                <td class="py-4 px-6 font-bold">6,840</td>
+                                <td class="py-4 px-6 font-bold">11,160</td>
+                                <td class="py-4 px-6 font-bold text-dark text-xl">18,000</td>
+                                <td class="py-4 px-6 text-dark font-bold">50%</td>
+                                <td class="py-4 px-6 text-dark font-bold">100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 关键增长点 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-light rounded-xl p-6 border-l-4 border-primary">
+                        <h3 class="text-xl font-bold text-primary mb-4">核心增长驱动因素</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa fa-arrow-circle-up text-primary mt-1 mr-3"></i>
+                                <span>代运营业务客户数量年增长40%，从100家扩展至140家</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-arrow-circle-up text-primary mt-1 mr-3"></i>
+                                <span>联合运营合资公司从8家增长至15家，股权收益显著提升</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-arrow-circle-up text-primary mt-1 mr-3"></i>
+                                <span>供应链金融业务从第二年开始贡献15%额外收益</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-arrow-circle-up text-primary mt-1 mr-3"></i>
+                                <span>培训转化率提升至35%，为下游业务提供充足客户资源</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-light rounded-xl p-6 border-l-4 border-accent">
+                        <h3 class="text-xl font-bold text-accent mb-4">收益质量分析</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span> recurring revenue（经常性收入）占比75%，收益稳定性高</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>高毛利业务（联合运营、自营）占比逐年提升，从31%到35%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>客户留存率85%，老客户贡献年度收益增长的60%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>资金周转率提升20%，资本使用效率显著提高</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 战略总结 -->
+    <section class="py-16 bg-gradient-to-r from-primary to-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">清晰的增长路径与明确的收益保障</h2>
+                <p class="text-lg mb-10 opacity-90 leading-relaxed">
+                    1.8亿元的两年总收益目标建立在扎实的业务漏斗模型基础上，通过层层递进的业务设计和风险控制机制，
+                    确保收益目标可实现、可持续。随着业务层级的提升，高毛利业务占比将不断提高，为股东创造更大价值。
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-4xl font-bold mb-2 text-accent">30%</div>
+                        <div class="mb-4">培训赋能占比</div>
+                        <div class="text-sm opacity-80">流量入口与客户筛选基础</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-4xl font-bold mb-2 text-accent">65%</div>
+                        <div class="mb-4">核心业务占比</div>
+                        <div class="text-sm opacity-80">代运营与联合运营构成收益主体</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                        <div class="text-4xl font-bold mb-2 text-accent">50%</div>
+                        <div class="mb-4">年复合增长率</div>
+                        <div class="text-sm opacity-80">高于行业平均水平2倍以上</div>
+                    </div>
+                </div>
+                
+                <div class="mt-12">
+                    <a href="#" class="inline-block bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+                        查看详细执行计划
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <img src="https://picsum.photos/id/30/120/60" alt="怡亚通集团" class="h-10 mx-auto mb-6">
+                <p class="text-gray-400 text-sm">
+                    © 2023 怡亚通集团 内部财务文件 | 保密等级：绝密
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-accent text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/90 z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 数字计数器动画
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 动画持续时间（毫秒）
+                const stepTime = 20; // 每步时间间隔（毫秒）
+                const totalSteps = duration / stepTime;
+                const stepSize = target / totalSteps;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += stepSize;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current).toLocaleString();
+                        setTimeout(updateCounter, stepTime);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // 滚动显示元素动画
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // 如果是连接器，添加visible类
+                        if (entry.target.classList.contains('connector')) {
+                            entry.target.classList.add('visible');
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察漏斗层
+            document.querySelectorAll('.funnel-layer, .connector').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // 初始化收益图表
+        function initRevenueChart() {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['培训赋能', '代运营服务', '联合运营', '品牌自营'],
+                    datasets: [
+                        {
+                            label: '第一年收益（万元）',
+                            data: [2160, 2520, 1800, 360],
+                            backgroundColor: 'rgba(0, 82, 204, 0.7)',
+                        },
+                        {
+                            label: '第二年收益（万元）',
+                            data: [3240, 4500, 2880, 540],
+                            backgroundColor: 'rgba(255, 86, 48, 0.7)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw.toLocaleString() + '万元';
+                                }
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                        },
+                        y: {
+                            stacked: false,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString() + '万';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // 返回顶部按钮
+        function setupBackToTop() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 延迟启动计数器动画，确保元素已加载
+            setTimeout(animateCounters, 500);
+            
+            setupScrollAnimations();
+            initRevenueChart();
+            setupBackToTop();
+        });
+    </script>
+</body>
+</html>
+    
