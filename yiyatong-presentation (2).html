@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>怡亚通全球出海服务平台发布会</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0A2463', // 深蓝主色
+            secondary: '#FFB830', // 金色辅助色
+            accent: '#3E92CC', // 亮蓝强调色
+            dark: '#0F172A', // 深色背景
+            light: '#F8FAFC', // 浅色文本
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      .bg-grid {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      .glow {
+        box-shadow: 0 0 15px rgba(62, 146, 204, 0.5);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-pulse-slow {
+        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      .slide-transition {
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .敲钟动画 {
+        animation: ring 1s ease-in-out;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes ring {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-15deg); }
+      50% { transform: rotate(15deg); }
+      75% { transform: rotate(-10deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-light overflow-hidden font-sans">
+  <!-- 主容器 -->
+  <div class="relative w-full h-screen">
+    <!-- 所有幻灯片容器 -->
+    <div id="slides-container" class="relative w-full h-full">
+      <!-- 幻灯片1: 封面页 -->
+      <div class="slide absolute inset-0 opacity-100 slide-transition" data-slide="1">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid overflow-hidden">
+          <!-- 背景装饰 -->
+          <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-1/3 left-1/3 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
+          
+          <!-- 数据流装饰 -->
+          <div class="absolute inset-0 opacity-30">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <path d="M0,100 C200,50 400,150 600,100 C800,50 1000,150 1200,100" stroke="rgba(62, 146, 204, 0.5)" fill="none" stroke-width="2" />
+              <path d="M0,200 C300,150 500,250 800,200 C1000,150 1100,250 1200,200" stroke="rgba(62, 146, 204, 0.5)" fill="none" stroke-width="2" />
+              <path d="M0,300 C400,250 600,350 900,300 C1100,250 1200,350 1200,300" stroke="rgba(62, 146, 204, 0.5)" fill="none" stroke-width="2" />
+              
+              <!-- 节点 -->
+              <circle cx="200" cy="100" r="4" fill="#3E92CC" />
+              <circle cx="400" cy="200" r="4" fill="#3E92CC" />
+              <circle cx="600" cy="150" r="4" fill="#3E92CC" />
+              <circle cx="800" cy="250" r="4" fill="#3E92CC" />
+              <circle cx="1000" cy="180" r="4" fill="#3E92CC" />
+            </svg>
+          </div>
+        </div>
+        
+        <div class="relative h-full flex flex-col items-center justify-center px-6 text-center z-10">
+          <div class="w-32 h-32 mb-10 animate-float">
+            <img src="https://picsum.photos/id/101/200/200" alt="怡亚通集团Logo" class="w-full h-full object-contain">
+          </div>
+          
+          <h1 class="text-[clamp(2rem,5vw,4rem)] font-display font-bold mb-6 text-shadow-lg leading-tight reveal">
+            中国企业出海总参谋部
+          </h1>
+          
+          <p class="text-[clamp(1.2rem,3vw,1.8rem)] text-accent mb-8 max-w-3xl reveal" style="transition-delay: 0.2s">
+            怡亚通全球出海服务平台发布会<br>暨 出海"黄埔军校"启航仪式
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 max-w-3xl mb-10 text-left reveal" style="transition-delay: 0.4s">
+            <div class="flex items-center">
+              <i class="fa fa-building-o text-secondary mr-3"></i>
+              <span>主办单位：怡亚通集团</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa fa-calendar text-secondary mr-3"></i>
+              <span>时间：2025年10月28日</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa fa-map-marker text-secondary mr-3"></i>
+              <span>地点：中国·深圳·怡亚通总部</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa fa-flag-o text-secondary mr-3"></i>
+              <span>指导单位：商务部相关司局、深圳市人民政府</span>
+            </div>
+          </div>
+          
+          <div class="mt-6 animate-pulse-slow reveal" style="transition-delay: 0.6s">
+            <p class="text-sm opacity-70">点击或按方向键浏览 <i class="fa fa-angle-right ml-1"></i></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片2: 盛会启幕 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="2">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid"></div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary reveal">
+            <i class="fa fa-users mr-3"></i>汇聚全球领袖，共启出海新篇
+          </h2>
+          
+          <!-- 政府领导 -->
+          <div class="mb-12 reveal">
+            <h3 class="text-xl font-bold mb-6 text-accent border-b border-accent/30 pb-2">（拟邀）政府领导与国际嘉宾</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-xl border border-white/10 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary/10">
+                <div class="w-20 h-20 rounded-full overflow-hidden mr-5">
+                  <img src="https://picsum.photos/id/1005/200/200" alt="原外交部部长李肇星" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="font-bold text-lg">李肇星</p>
+                  <p class="opacity-70 text-sm">原外交部部长<br><span class="text-secondary">特邀致辞嘉宾</span></p>
+                </div>
+              </div>
+              
+              <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-xl border border-white/10 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary/10">
+                <div class="w-20 h-20 rounded-full overflow-hidden mr-5">
+                  <img src="https://picsum.photos/id/1006/200/200" alt="一带一路大使馆代表" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="font-bold text-lg">一带一路大使馆代表</p>
+                  <p class="opacity-70 text-sm">国际合作机构代表</p>
+                </div>
+              </div>
+              
+              <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-xl border border-white/10 flex items-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary/10">
+                <div class="w-20 h-20 rounded-full overflow-hidden mr-5">
+                  <img src="https://picsum.photos/id/1010/200/200" alt="中欧班列开创者代表" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="font-bold text-lg">中欧班列开创者代表</p>
+                  <p class="opacity-70 text-sm">国际物流通道专家</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 主办方领袖 -->
+          <div class="mb-12 reveal">
+            <h3 class="text-xl font-bold mb-6 text-accent border-b border-accent/30 pb-2">主办方领袖</h3>
+            <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-xl border border-white/10 flex items-center max-w-2xl transform transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10">
+              <div class="w-24 h-24 rounded-full overflow-hidden mr-6">
+                <img src="https://picsum.photos/id/1012/200/200" alt="怡亚通副董事长兼总经理陈伟民" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <p class="font-bold text-xl">陈伟民 副董事长兼总经理</p>
+                <p class="opacity-70">怡亚通全球出海战略总设计师</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 战略合作伙伴 -->
+          <div class="reveal">
+            <h3 class="text-xl font-bold mb-6 text-accent border-b border-accent/30 pb-2">10家出海上市公司代表</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司1</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司2</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司3</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司4</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司5</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司6</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司7</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司8</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司9</span>
+              </div>
+              <div class="bg-white/10 rounded-lg p-4 flex items-center justify-center h-20 hover:bg-white/20 transition-colors">
+                <span class="text-center text-sm font-medium">上市公司10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片3: 时代之问 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="3">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid"></div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary reveal">
+            <i class="fa fa-question-circle mr-3"></i>旧模式见顶，新大陆何在？
+          </h2>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-grow">
+            <!-- 挑战 -->
+            <div class="bg-gradient-to-br from-dark to-primary/40 rounded-xl p-6 border border-white/10 flex flex-col reveal">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mr-4">
+                  <i class="fa fa-exclamation-triangle text-red-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold">全球出海挑战</h3>
+              </div>
+              
+              <div class="space-y-8 flex-grow">
+                <div>
+                  <h4 class="text-xl font-semibold mb-3 text-red-400">开店难</h4>
+                  <p class="opacity-80 mb-4">平台规则多变，本土化门槛高，合规要求复杂，难以快速切入目标市场。</p>
+                  <div class="h-48 rounded-lg overflow-hidden">
+                    <img src="https://picsum.photos/id/1070/600/400" alt="开店挑战示意图" class="w-full h-full object-cover">
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-3 text-red-400">运营累</h4>
+                  <p class="opacity-80">物流、支付、税务、法务流程冗长复杂，耗费企业大量精力，影响核心业务。</p>
+                </div>
+                
+                <div>
+                  <h4 class="text-xl font-semibold mb-3 text-red-400">成本高</h4>
+                  <p class="opacity-80">试错成本高昂，中间环节层层加价，利润空间被严重挤压，难以形成价格优势。</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 机遇 -->
+            <div class="bg-gradient-to-br from-dark to-primary/40 rounded-xl p-6 border border-white/10 flex flex-col reveal">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mr-4">
+                  <i class="fa fa-lightbulb-o text-green-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold">全球市场机遇</h3>
+              </div>
+              
+              <div class="mb-8">
+                <p class="opacity-80 mb-6">全球电商规模持续增长，品牌出海、供应链出海成为中国企业全球化的主旋律，新兴市场潜力巨大。</p>
+                
+                <div class="h-64 rounded-lg overflow-hidden mb-6">
+                  <img src="https://picsum.photos/id/1043/600/400" alt="全球市场机遇" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="bg-dark/60 p-4 rounded-lg border border-green-500/30">
+                  <p class="text-lg font-semibold text-green-400">2025年全球跨境电商市场规模预计突破3万亿美元</p>
+                  <p class="opacity-70 text-sm">年复合增长率保持在15%以上，新兴市场增速领先</p>
+                </div>
+              </div>
+              
+              <div class="mt-auto pt-6 border-t border-white/10">
+                <p class="text-xl font-semibold italic text-accent">
+                  碎片化的服务无法应对系统性的挑战。<br>
+                  中国企业需要的是"总参谋部"+"后勤部"的一体化赋能。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片4: 战略定位与黄埔军校内核 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="4">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid overflow-hidden">
+          <div class="absolute top-0 right-0 w-1/2 h-full">
+            <div class="absolute top-20 right-20 w-64 h-64 border-4 border-secondary/30 rounded-full"></div>
+            <div class="absolute bottom-40 right-60 w-96 h-96 border-4 border-accent/30 rounded-full"></div>
+          </div>
+        </div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary reveal">
+            <i class="fa fa-check-circle mr-3"></i>战略定位：一站式、全流程、生态型出海赋能平台
+          </h2>
+          
+          <!-- 核心战略定位突出展示 -->
+          <div class="mb-16 max-w-4xl mx-auto bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-secondary/30 reveal">
+            <div class="flex items-center justify-center mb-6">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="fa fa-compass text-2xl text-secondary"></i>
+              </div>
+              <h3 class="text-3xl font-bold text-center">「黄埔军校」内核阐释</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+              <!-- 内核1：培养将帅 -->
+              <div class="bg-dark/80 backdrop-blur-sm p-6 rounded-xl border-l-4 border-secondary hover:border-secondary/80 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-start">
+                  <div class="mr-4 mt-1 text-secondary text-2xl">
+                    <i class="fa fa-chess-king"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold mb-2">培养将帅（战略规划）</h4>
+                    <p class="opacity-80">为企业一把手提供顶层设计的"总裁战略班"，培养具有全球视野的商业领袖。</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 内核2：提供装备 -->
+              <div class="bg-dark/80 backdrop-blur-sm p-6 rounded-xl border-l-4 border-secondary hover:border-secondary/80 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-start">
+                  <div class="mr-4 mt-1 text-secondary text-2xl">
+                    <i class="fa fa-cubes"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold mb-2">提供装备（平台工具）</h4>
+                    <p class="opacity-80">发布"一键全球开店"等智能系统，让企业轻松获取全球市场的"先进装备"。</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 内核3：制定方略 -->
+              <div class="bg-dark/80 backdrop-blur-sm p-6 rounded-xl border-l-4 border-secondary hover:border-secondary/80 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-start">
+                  <div class="mr-4 mt-1 text-secondary text-2xl">
+                    <i class="fa fa-map-o"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold mb-2">制定方略（运营支持）</h4>
+                    <p class="opacity-80">覆盖全链路的专业服务，从市场调研到营销推广，提供精准的"作战方略"。</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 内核4：后勤保障 -->
+              <div class="bg-dark/80 backdrop-blur-sm p-6 rounded-xl border-l-4 border-secondary hover:border-secondary/80 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-start">
+                  <div class="mr-4 mt-1 text-secondary text-2xl">
+                    <i class="fa fa-truck"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold mb-2">后勤保障（金融/物流）</h4>
+                    <p class="opacity-80">稳定可靠的供应链与资金支持网络，为企业出海提供坚实的"后勤保障"。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 核心价值总结 -->
+          <div class="mt-auto text-center reveal">
+            <div class="inline-block bg-accent/20 border border-accent/40 px-8 py-5 rounded-lg">
+              <p class="text-2xl font-bold text-accent">
+                不仅是一次出海的号召，更是全方位赋能出海；不仅是一次出海学习，更是一个出海的圈层
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片5: 核心能力 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="5">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid"></div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary reveal">
+            <i class="fa fa-shield mr-3"></i>全链条赋能，构建出海护城河
+          </h2>
+          
+          <p class="text-xl text-center mb-12 max-w-3xl mx-auto reveal">九大核心能力，覆盖企业出海全生命周期</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-grow">
+            <!-- 能力1 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">01</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">全球开店</h3>
+              <p class="opacity-80 text-sm">一键打通全球主流电商平台与线下渠道，快速实现全球市场布局。</p>
+            </div>
+            
+            <!-- 能力2 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">02</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">全球收付</h3>
+              <p class="opacity-80 text-sm">安全高效的多币种结算系统，覆盖100+国家和地区的支付网络。</p>
+            </div>
+            
+            <!-- 能力3 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">03</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">B2B出海培训</h3>
+              <p class="opacity-80 text-sm">针对企业级客户的定制化培训，掌握海外B2B市场拓展技巧。</p>
+            </div>
+            
+            <!-- 能力4 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">04</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">B2C出海培训</h3>
+              <p class="opacity-80 text-sm">消费品出海全流程培训，从选品到营销的实战技能提升。</p>
+            </div>
+            
+            <!-- 能力5 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">05</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">国际物流</h3>
+              <p class="opacity-80 text-sm">与中欧班列深度合作，构建覆盖全球的智能物流网络与配送体系。</p>
+            </div>
+            
+            <!-- 能力6 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">06</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">代理出口</h3>
+              <p class="opacity-80 text-sm">一站式外贸综合服务，合规高效解决报关、报检等出口难题。</p>
+            </div>
+            
+            <!-- 能力7 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">07</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">供应链金融</h3>
+              <p class="opacity-80 text-sm">基于交易数据的创新融资服务，解决出海企业资金周转难题。</p>
+            </div>
+            
+            <!-- 能力8 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">08</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">法律服务</h3>
+              <p class="opacity-80 text-sm">全球合规咨询与争议解决，规避法律风险，保障企业权益。</p>
+            </div>
+            
+            <!-- 能力9 -->
+            <div class="bg-gradient-to-br from-dark to-primary/30 p-6 rounded-xl border border-white/10 group hover:border-secondary/50 transition-all duration-300 transform hover:-translate-y-2 reveal">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                <span class="text-2xl font-bold text-secondary">09</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">知识产权</h3>
+              <p class="opacity-80 text-sm">全球商标与专利布局服务，构建品牌护城河，防止侵权风险。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片6: 战略签约 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="6">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid"></div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary reveal">
+            <i class="fa fa-handshake-o mr-3"></i>战略签约 · 10家出海上市公司强强联合
+          </h2>
+          
+          <h3 class="text-2xl font-bold mb-12 text-center text-accent reveal">这不仅是一次出海学习，更是一个出海的圈层</h3>
+          
+          <div class="flex-grow flex flex-col items-center justify-center">
+            <!-- 签约台 -->
+            <div class="w-full max-w-5xl bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-secondary/30 mb-10 reveal">
+              <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <!-- 怡亚通代表 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-secondary mb-2">
+                    <img src="https://picsum.photos/id/1012/200/200" alt="怡亚通副董事长兼总经理陈伟民" class="w-full h-full object-cover">
+                  </div>
+                  <p class="text-center font-medium">陈伟民<br>副董事长兼总经理</p>
+                </div>
+                
+                <!-- 签约企业代表 (展示部分，实际10家) -->
+                <div class="flex flex-col items-center">
+                  <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-secondary mb-2">
+                    <img src="https://picsum.photos/id/1025/200/200" alt="上市公司代表1" class="w-full h-full object-cover">
+                  </div>
+                  <p class="text-center font-medium">上市公司代表</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                  <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-secondary mb-2">
+                    <img src="https://picsum.photos/id/1026/200/200" alt="上市公司代表2" class="w-full h-full object-cover">
+                  </div>
+                  <p class="text-center font-medium">上市公司代表</p>
+                </div>
+                
+                <div class="flex items-center justify-center">
+                  <div class="px-6 py-3 bg-secondary text-dark rounded-lg font-bold">
+                    签约中
+                  </div>
+                </div>
+                
+                <!-- 更多代表占位 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-secondary mb-2 bg-dark flex items-center justify-center">
+                    <span>+8</span>
+                  </div>
+                  <p class="text-center font-medium">上市公司代表</p>
+                </div>
+              </div>
+              
+              <!-- 签约展示图 -->
+              <div class="h-64 rounded-lg overflow-hidden relative border-2 border-accent glow">
+                <img src="https://picsum.photos/id/1060/1200/400" alt="签约仪式现场" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent flex items-end">
+                  <div class="p-6">
+                    <p class="font-medium text-secondary">10家行业龙头上市公司共同签署全球出海战略合作协议</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 签约意义 -->
+            <div class="max-w-3xl bg-dark/60 backdrop-blur-sm p-6 rounded-xl border border-white/10 reveal">
+              <h4 class="text-xl font-bold mb-4 text-center text-accent">出海圈层价值</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="text-center p-4">
+                  <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa fa-exchange text-secondary"></i>
+                  </div>
+                  <p>资源共享与业务对接</p>
+                </div>
+                <div class="text-center p-4">
+                  <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa fa-lightbulb-o text-secondary"></i>
+                  </div>
+                  <p>经验交流与智慧碰撞</p>
+                </div>
+                <div class="text-center p-4">
+                  <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa fa-handshake-o text-secondary"></i>
+                  </div>
+                  <p>联合出海与风险共担</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片7: 黄埔一期启航仪式 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="7">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid overflow-hidden">
+          <!-- 世界地图背景 -->
+          <div class="absolute inset-0 opacity-20">
+            <img src="https://picsum.photos/id/101/1920/1080" alt="世界地图" class="w-full h-full object-cover">
+          </div>
+          
+          <!-- 光点装饰 -->
+          <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/3 w-4 h-4 bg-secondary rounded-full animate-pulse"></div>
+            <div class="absolute top-1/2 right-1/4 w-4 h-4 bg-secondary rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
+            <div class="absolute bottom-1/3 left-1/2 w-4 h-4 bg-secondary rounded-full animate-pulse" style="animation-delay: 1s"></div>
+            <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-secondary rounded-full animate-pulse" style="animation-delay: 1.5s"></div>
+            <div class="absolute bottom-1/4 right-1/2 w-4 h-4 bg-secondary rounded-full animate-pulse" style="animation-delay: 2s"></div>
+          </div>
+        </div>
+        
+        <div class="relative h-full flex flex-col px-8 py-12 z-10">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-display font-bold mb-10 text-secondary text-center reveal">
+            <i class="fa fa-rocket mr-3"></i>黄埔一期，全球启航！
+          </h2>
+          
+          <div class="flex-grow flex flex-col items-center justify-center">
+            <!-- 启动仪式 -->
+            <div class="w-full max-w-5xl bg-dark/60 backdrop-blur-sm p-8 rounded-xl border border-secondary/30 mb-12 reveal">
+              <div class="text-center mb-10">
+                <p class="text-2xl mb-4">怡亚通全球出海战略总设计师 陈伟民 先生</p>
+                <p class="text-xl opacity-80">开启黄埔一期启航仪式</p>
+              </div>
+              
+              <!-- 敲钟装置 -->
+              <div class="flex flex-col items-center">
+                <div class="relative mb-8">
+                  <div class="w-32 h-32 bg-secondary rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-dark font-bold text-2xl">启航</span>
+                  </div>
+                  <div id="bell" class="absolute -top-16 left-1/2 -translate-x-1/2 w-10 h-24 border-4 border-dark rounded-full">
+                    <div class="w-3 h-3 bg-dark rounded-full absolute top-3 left-1/2 -translate-x-1/2"></div>
+                  </div>
+                </div>
+                
+                <button id="ringBellBtn" class="bg-accent hover:bg-accent/80 text-white font-bold py-3 px-10 rounded-full text-lg transition-all transform hover:scale-105">
+                  敲响启航之钟
+                </button>
+              </div>
+              
+              <div class="mt-10 text-center">
+                <p class="text-xl">黄埔一期将重点培养100家领军企业，打造全球化标杆</p>
+              </div>
+            </div>
+            
+            <!-- 宣布启动 -->
+            <div class="text-center max-w-3xl reveal">
+              <div class="inline-block bg-accent/20 border border-accent/40 px-8 py-6 rounded-lg mb-8">
+                <p class="text-2xl font-bold text-accent">
+                  "怡亚通跨境商学院·总裁战略班"首批学员招募正式启动！
+                </p>
+              </div>
+              
+              <p class="text-xl opacity-90">
+                汇聚行业精英，共建全球商业新格局<br>
+                一次加入，终身受益的全球化资源平台
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 幻灯片8: 结尾页 -->
+      <div class="slide absolute inset-0 opacity-0 translate-x-full slide-transition" data-slide="8">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-dark bg-grid overflow-hidden">
+          <!-- 背景装饰 -->
+          <div class="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-secondary blur-3xl opacity-20"></div>
+          <div class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-accent blur-3xl opacity-20"></div>
+        </div>
+        
+        <div class="relative h-full flex flex-col items-center justify-center px-8 text-center z-10">
+          <div class="w-32 h-32 mb-10 animate-float">
+            <img src="https://picsum.photos/id/101/200/200" alt="怡亚通集团Logo" class="w-full h-full object-contain">
+          </div>
+          
+          <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-display font-bold mb-10 text-secondary text-shadow-lg reveal">
+            携手怡亚通，共赢全球市场
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 max-w-4xl mb-12 reveal">
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+                <i class="fa fa-user-plus text-2xl text-secondary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">黄埔一期招募</h3>
+              <p class="text-2xl font-bold text-accent">仅限100家<br>领军企业</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+                <i class="fa fa-phone text-2xl text-secondary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">咨询热线</h3>
+              <p class="text-2xl font-bold">400-888-8888</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
+                <i class="fa fa-globe text-2xl text-secondary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">官方网站</h3>
+              <p class="text-2xl font-bold">www.yiyatong.com</p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <div class="w-24 h-24 bg-white p-2 rounded-lg mb-4">
+                <!-- 模拟二维码 -->
+                <div class="w-full h-full bg-dark grid grid-cols-4 grid-rows-4 gap-1">
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-white col-span-1 row-span-1"></div>
+                  <div class="bg-white col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-white col-span-1 row-span-1"></div>
+                  <div class="bg-white col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                  <div class="bg-black col-span-1 row-span-1"></div>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold">扫码加入出海圈层</h3>
+            </div>
+          </div>
+          
+          <div class="mt-8 reveal">
+            <p class="text-3xl font-display font-bold text-secondary text-shadow-lg">
+              中国企业出海总参谋部
+            </p>
+          </div>
+          
+          <div class="mt-12 text-sm opacity-60 reveal">
+            <p>© 2025 怡亚通集团 版权所有</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 导航控制 -->
+    <div class="absolute bottom-8 left-0 right-0 flex justify-center z-20">
+      <div class="flex space-x-3">
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors" data-slide="1"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="2"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="3"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="4"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="5"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="6"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="7"></button>
+        <button class="slide-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white transition-colors" data-slide="8"></button>
+      </div>
+    </div>
+    
+    <!-- 前后按钮 -->
+    <button id="prev-btn" class="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-dark/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:border-secondary hover:bg-dark/80 transition-all z-20">
+      <i class="fa fa-angle-left text-2xl"></i>
+    </button>
+    <button id="next-btn" class="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-dark/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:border-secondary hover:bg-dark/80 transition-all z-20">
+      <i class="fa fa-angle-right text-2xl"></i>
+    </button>
+    
+    <!-- 全屏按钮 -->
+    <button id="fullscreen-btn" class="absolute top-8 right-8 w-10 h-10 bg-dark/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:border-secondary hover:bg-dark/80 transition-all z-20">
+      <i class="fa fa-expand text-lg"></i>
+    </button>
+  </div>
+
+  <script>
+    // 当前幻灯片索引
+    let currentSlide = 1;
+    const totalSlides = 8;
+    
+    // DOM元素
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const ringBellBtn = document.getElementById('ringBellBtn');
+    const bell = document.getElementById('bell');
+    
+    // 显示指定幻灯片
+    function showSlide(n) {
+      // 获取当前和目标幻灯片
+      const current = document.querySelector(`.slide[data-slide="${currentSlide}"]`);
+      const target = document.querySelector(`.slide[data-slide="${n}"]`);
+      
+      // 设置离开动画
+      if (current) {
+        current.style.opacity = '0';
+        if (n > currentSlide) {
+          current.style.transform = 'translateX(-100%)';
+        } else {
+          current.style.transform = 'translateX(100%)';
+        }
+        // 移除当前幻灯片的reveal动画类
+        current.querySelectorAll('.reveal').forEach(el => {
+          el.classList.remove('active');
+        });
+      }
+      
+      // 重置所有dots
+      dots.forEach(dot => {
+        dot.classList.remove('bg-white/50');
+        dot.classList.add('bg-white/30');
+      });
+      
+      // 准备目标幻灯片
+      target.style.transform = n > currentSlide ? 'translateX(100%)' : 'translateX(-100%)';
+      target.style.opacity = '0';
+      
+      // 触发重排
+      void target.offsetWidth;
+      
+      // 显示目标幻灯片
+      currentSlide = n;
+      target.style.opacity = '1';
+      target.style.transform = 'translateX(0)';
+      
+      // 激活当前dot
+      document.querySelector(`.slide-dot[data-slide="${currentSlide}"]`).classList.remove('bg-white/30');
+      document.querySelector(`.slide-dot[data-slide="${currentSlide}"]`).classList.add('bg-white/50');
+      
+      // 触发目标幻灯片的reveal动画
+      setTimeout(() => {
+        const reveals = target.querySelectorAll('.reveal');
+        reveals.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('active');
+          }, index * 150);
+        });
+      }, 300);
+    }
+    
+    // 下一张幻灯片
+    function nextSlide() {
+      let next = currentSlide + 1;
+      if (next > totalSlides) next = 1;
+      showSlide(next);
+    }
+    
+    // 上一张幻灯片
+    function prevSlide() {
+      let prev = currentSlide - 1;
+      if (prev < 1) prev = totalSlides;
+      showSlide(prev);
+    }
+    
+    // 敲钟动画
+    function ringBell() {
+      bell.classList.add('敲钟动画');
+      // 播放钟声效果（实际项目中可添加音频）
+      setTimeout(() => {
+        bell.classList.remove('敲钟动画');
+      }, 1000);
+    }
+    
+    // 点击dots切换幻灯片
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideNum = parseInt(dot.getAttribute('data-slide'));
+        showSlide(slideNum);
+      });
+    });
+    
+    // 按钮事件
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    ringBellBtn.addEventListener('click', ringBell);
+    
+    // 键盘导航
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === ' ') { // 空格键
+        e.preventDefault();
+        nextSlide();
+      }
+      // 按回车敲钟
+      if (currentSlide === 7 && e.key === 'Enter') {
+        ringBell();
+      }
+    });
+    
+    // 全屏切换
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.error(`无法进入全屏模式: ${err.message}`);
+        });
+        fullscreenBtn.innerHTML = '<i class="fa fa-compress text-lg"></i>';
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+          fullscreenBtn.innerHTML = '<i class="fa fa-expand text-lg"></i>';
+        }
+      }
+    });
+    
+    // 初始化显示第一张幻灯片
+    window.addEventListener('load', () => {
+      showSlide(1);
+    });
+  </script>
+</body>
+</html>
